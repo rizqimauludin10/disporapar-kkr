@@ -1,0 +1,73 @@
+.gva-list-number{
+   &.style-1{
+      ul.list-number{
+         list-style: none;
+         padding: 0;
+         li.list-number-item{
+            margin-bottom: 35px;
+            .content-inner{
+               .content-top{
+                  @include clearfix();
+                  .number{
+                     width: 75px;
+                     float: left;
+                     background: #F7F7F9;
+                     padding: 5px 10px;
+                     text-align: center;
+                     font-size: 14px;
+                     color: $headings-color;
+                     font-weight: 600;
+                     span{
+                        .arrow{
+                           color: $headings-color;
+                           font-size: 12px;
+                           margin-left: 3px;
+                           position: relative;
+                           top: -1px;
+                        }
+                     }
+                  }
+                  .title{
+                     font-size: 20px;
+                     padding-left: 95px;
+                     padding-top: 5px;
+                     margin: 0;
+                  }
+               }
+               .descrption{
+                  padding-top: 20px;
+               }
+            }
+         }
+      }
+   }
+   &.style-2{
+      ul.list-number{
+         list-style: none;
+         padding: 0;
+         li.list-number-item{
+            background: #F4F4F5;
+            margin-bottom: 10px;
+            padding: 35px 40px;
+            @include media-breakpoint-down(lg){
+               padding: 30px;
+            }
+             @include media-breakpoint-down(md){
+               padding: 20px;
+            }
+            h3{
+               font-size: 20px;
+               margin: 0;
+               @include media-breakpoint-down(lg){
+                  font-size: 18px;
+               }
+               span{
+                  color: $theme-color;
+                  display: inline-block;
+                  margin-right: 10px;
+               }
+            }
+         }
+      }
+   }
+} 

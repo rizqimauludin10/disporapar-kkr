@@ -1,0 +1,61 @@
+.gva-testimonial{
+  .testimonial-item{
+    border: 1px solid $border-color;
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.35s;
+    background: url('#{$image-theme-path-base}bg-testimonial.png') no-repeat right 30px top 0 $white;
+    background-size: 350px;
+    animation: bg_top_right_shape 5s infinite;
+    @include media-breakpoint-down(lg){
+      background-size: 290px;
+    }
+    @include media-breakpoint-down(md){
+      background-size: 200px;
+    }
+    .testimonial-content{
+      padding: 60px 30px 35px;
+      max-width: 550px;
+      margin: 0 auto;
+      .testimonial-quote{
+        font-size: 18px;
+        line-height: 38px;
+        margin-bottom: 15px;
+        font-family: $headings-font-family;
+      }
+      .testimonial-meta{
+        margin-bottom: 28px;
+        .testimonial-image{
+          float: left;
+          img{
+            overflow: hidden;
+            max-width: 72px;
+          }
+        }
+        .testimonial-information{
+          padding-left: 100px;
+          span{
+            display: block;
+            &.testimonial-name{
+              font-size: 22px;
+              font-weight: 700;
+              color: $black;
+              font-family: $headings-font-family;
+              
+            }
+            &.testimonial-job{
+              font-size: 14px;
+              text-transform: uppercase;
+              color: $theme-color;
+              margin-top: 2px;
+            }
+          }
+        }
+      }
+    }
+    &:hover{
+      @include box-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    }
+  }
+}
+

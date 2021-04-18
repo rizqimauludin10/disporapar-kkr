@@ -1,0 +1,400 @@
+.team-progress-wrapper{
+  .team__progress-label{
+    font-weight: 700;
+    color: $black;
+    font-family: $headings-font-family;
+    font-size: 16px;
+  }
+  .team__progress {
+    background-color: #F4F4F5;
+    position: relative;
+    overflow: visible;
+    z-index: 11;
+    .team__progress-bar{
+      @include transition(width 1s ease-in-out);
+      height: 10px;
+      background: $theme-color;
+      position: relative;
+      display: block;
+      width: 0;
+      .percentage{
+        position: absolute;
+        bottom: 100%;
+        left: 100%;
+        z-index: 1;
+        padding: 6px 8px;
+        background: $theme-color;
+        font-size: 14px;
+        color: $white;
+        margin-bottom: 10px;
+        line-height: 1;
+        &:after{
+          content: "";
+          border: 6px solid transparent;
+          border-top-color: $theme-color;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+          transform: rotate(-90deg);
+          margin-top: -6px;
+        }
+        &.percentage-left{ 
+          left: auto;
+          right: 0;
+          &:after{
+            right: 0;
+            left: auto;
+            transform: rotate(90deg);
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.team-block{
+  &.team-v1{
+    background: $white;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    padding: 60px 60px 45px;
+    border: 1px solid $border-color;
+    transition: all 0.35s;
+    @include media-breakpoint-down(lg){
+      padding: 45px;
+    }
+    @include media-breakpoint-down(md){
+      padding: 25px;
+    }
+    @include media-breakpoint-down(sm){
+      padding: 20px;
+    }
+    .team-image{
+      position: relative; 
+      overflow: hidden;
+      text-align: center;
+      a.overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        @include size(100%, 100%);
+        background: rgba(0, 0, 0, 0.5);
+        @include opacity(0);
+        transition: all 0.35s;
+      }
+      .socials-team{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include transition(all 0.15s); 
+        text-align: left;
+        z-index: 11;
+        height: 45px;
+        a{
+          display: inline-block;
+          color: #9aa3b2;
+          margin: 0;
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: all 0.25s;
+          transform: translateX(-20px);
+          @include opacity(0);
+          font-size: 16px;
+          @include size(45px, 45px);
+          text-align: center;
+          line-height: 45px;
+          background: $black;
+          float: left;
+          position: relative;
+          z-index: 1;
+          &:hover{
+            color: $white;
+          }
+          &.share-social{
+            padding-top: 3px;
+            margin-top: 1px;
+            opacity: 1;
+            transform: translateY(0);
+            line-height: 38px;
+            background: $theme-color;
+            z-index: 11;
+            .icon{
+              font-size: 14px;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    .team-content{
+      position: relative;
+      text-align: center;
+      @include transition(all 0.35s);
+      .team-content-inner{
+        position: relative;
+        z-index: 2;
+        padding: 30px 0 0;
+        z-index: 11;
+      }
+      .team-name{
+        font-size: 22px;
+        margin: 0 0 8px;
+        line-height: 20px;
+      }
+      .team-job{
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        color: $theme-color;
+        letter-spacing: 1px;
+      }
+      .team-desc{
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    }
+    &.active{
+      .team-image{
+        .socials-team{
+          a{
+            transform: translateY(0);
+            @include opacity(1);
+          }
+        }
+      }
+    }
+     &:hover{
+      box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+      .team-image{
+        .overlay{
+          @include opacity(1);
+        }
+      }
+    }
+  }  
+  &.team-v2{
+    background: $white;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    .team-image{
+      position: relative; 
+      overflow: hidden;
+      text-align: center;
+      a.overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        @include size(100%, 100%);
+        background: rgba(0, 0, 0, 0.5);
+        @include opacity(0);
+        transition: all 0.35s;
+      }
+      .socials-team{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include transition(all 0.15s); 
+        text-align: left;
+        z-index: 11;
+        a{
+          display: block;
+          text-align: left;
+          color: $white;
+          margin: 0;
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: all 0.25s;
+          transform: translateY(20px);
+          @include opacity(0);
+          font-size: 16px;
+          @include size(56px, 56px);
+          text-align: center;
+          line-height: 56px;
+          background: $theme-color;
+          &.share-social{
+            opacity: 1;
+            transform: translateY(0);
+            padding-top: 3px;
+            margin-top: 1px;
+            svg{
+              width: 18px;
+              fill: $white;
+              height: auto;
+            }
+          }
+          &:hover{
+            background: $theme-color-2;
+            svg{
+              fill: $black;
+            }
+          }
+        }
+      }
+    }
+    .team-content{
+      position: relative;
+      text-align: center;
+      @include transition(all 0.35s);
+      background: #F7F7F9;
+      .team-content-inner{
+        position: relative;
+        z-index: 2;
+        padding: 30px 0;
+        border-bottom: 1px solid $border-color;
+        z-index: 11;
+      }
+      .team-name{
+        font-size: 20px;
+        margin: 0 0 2px;
+        line-height: 20px;
+      }
+      .team-job{
+        font-size: 16px;
+        text-transform: capitalize;
+        margin-top: 5px;
+      }
+    }
+    &.active{
+      .team-image{
+        .socials-team{
+          a{
+            transform: translateY(0);
+            @include opacity(1);
+            &.share-social{
+              background: $theme-color-2;
+              svg{
+                fill: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+     &:hover{
+      .team-content{        
+        @include box-shadow(0 10px 30px rgba(0, 0, 0, 0.05));
+      }
+      .team-image{
+        .overlay{
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}
+
+.gva-teams-grid{
+  .team-block{
+    margin-bottom: 35px;
+  }
+}
+
+.team-block-single{
+  margin: 65px 0 95px;
+  .team-image{
+    margin-bottom: 10px;
+  }
+  .heading{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: $black;
+    border-bottom: 1px solid $border-color;
+    position: relative;
+    float: left;
+    width: 100%;
+    font-family: $headings-font-family;
+    &:after{
+      content: '';
+      @include size(80px, 1px);
+      background: $theme-color;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      z-index: 9;
+    }
+  }
+  .team-name{
+    color: $black;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 0 5px;
+  }
+  .team-email, .team-phone{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: $headings-font-family;
+    font-size: 16px;
+    @include media-breakpoint-down(md){
+      font-size: 14px;
+      label{
+        display: block;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .team-job{
+    text-transform: uppercase;
+    color: $theme-color;
+    font-size: 14px;
+  }
+  .team-quote{
+    font-size: 16px;
+    color: #999999;
+    margin-top: 20px;
+    padding-left: 50px;
+    position: relative;
+    font-style: italic;
+    &:after{
+      font-family: "Font Awesome 5 Free";
+      content: "\f10d";
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: 1;
+      color: $theme-color;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+      font-weight: 700;
+    }
+  }
+  .socials-team{
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    a{
+      @include size(45px, 45px);
+      font-size: 14px;
+      display: inline-block;
+      margin-right: 15px;
+      color: $body-color;
+      transition: all 0.35s;
+      line-height: 50px;
+      border-radius: 50%;
+      background: #F4F4F5;
+      text-align: center;
+      @include media-breakpoint-down(md){
+        @include size(35px, 35px);
+        line-height: 40px;
+      }
+      &:hover{
+        background: $theme-color;
+        color: $white;
+        border-color: $theme-color;
+      }
+    }
+  }
+}

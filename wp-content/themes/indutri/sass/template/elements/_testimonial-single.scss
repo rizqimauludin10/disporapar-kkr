@@ -1,0 +1,48 @@
+.gva-testimonial-single{
+  &.style-1{
+    margin: 0 auto;
+    .testimonial-item{
+      position: relative;
+      max-width: 850px;
+      margin: 0 auto;
+      .testimonial-content{
+        z-index: 11;
+        margin: 0 auto;
+        text-align: center;
+        .testimonial-quote{
+          font-size: 36px;
+          line-height: 56px;
+          color: $black;
+          font-family: $headings-font-family;
+          @include media-breakpoint-down(md){
+            font-size: 28px;
+            line-height: 50px;
+          }
+          @include media-breakpoint-down(sm){
+            font-size: 22px;
+            line-height: 36px;
+          }
+        }
+        .testimonial-meta{
+          margin: 35px auto 30px;
+          .testimonial-name{
+            font-size: 22px;
+            font-weight: 700;
+            color: $black;
+            margin: 0;
+          }
+          .testimonial-job{
+            font-size: 14px;
+            color: $theme-color;
+            text-transform: uppercase;
+            margin-top: 6px;
+          }
+        }
+        .testimonial-image{
+          margin: 0 auto;
+          max-width: 75px;
+        }
+      } 
+    }
+  }
+}
